@@ -1,5 +1,42 @@
 <mamecheat version="1">
-    <cheat desc="Enable 3 panel difficulty selection">
+
+<cheat desc="Change region flag">
+	<parameter>
+		<item value="01">North/South America</item>
+		<item value="02">Europe</item>
+		<item value="03">Japan</item>
+		<item value="04">Asia</item>
+	</parameter>
+	<script state="run">
+		<action>maincpu.pb@8009A9C0=param</action>
+	</script>
+</cheat>
+
+<cheat desc="Change language">
+	<parameter>
+		<item value="01">Japanese</item>
+		<item value="02">English</item>
+		<item value="03">French</item>
+		<item value="04">German</item>
+		<item value="05">Italian</item>
+		<item value="06">Spanish</item>
+	</parameter>
+	<script state="run">
+		<action>maincpu.pb@8011591E=param</action>
+	</script>
+</cheat>
+
+<cheat desc="Change music database (change at boot)">
+	<parameter>
+		<item value="0x61">Asian</item>
+		<item value="0x6a">Japanese</item>
+	</parameter>
+	<script state="run">
+		<action>maincpu.pb@800104B1=param</action>
+	</script>
+</cheat>
+
+ <cheat desc="Enable 3 panel difficulty selection">
         <script state="on">
             <action>temp0=maincpu.pd@80046240</action>
             <action>temp1=maincpu.pd@800462bc</action>
@@ -12,5 +49,6 @@
             <action>maincpu.pd@80046240=temp0</action>
             <action>maincpu.pd@800462bc=temp1</action>
         </script>
-    </cheat>
+</cheat>
+
 </mamecheat>
